@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RootNamespace>MidiVisualizer.Core</RootNamespace>
+    <AssemblyName>MidiVisualizer.Core</AssemblyName>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <!--
+    刻意不引入任何音频库：
+    本软件只做「显示 + MIDI 直通」，音源由用户自己的 Kontakt 7 负责。
+    全部平台调用只用 winmm.dll（MIDI 输入/输出、音频设备枚举提示）。
+  -->
+
+</Project>

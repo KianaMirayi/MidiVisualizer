@@ -1,6 +1,0 @@
-<Solution>
-  <Folder Name="/src/">
-    <Project Path="src/MidiStaffVisualizer.App/MidiStaffVisualizer.App.csproj" />
-    <Project Path="src/MidiStaffVisualizer.Core/MidiStaffVisualizer.Core.csproj" />
-  </Folder>
-</Solution>

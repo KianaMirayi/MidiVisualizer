@@ -1,4 +1,4 @@
-# MIDI 实时五线谱（MidiStaffVisualizer）
+# MIDI 实时五线谱（MidiVisualizer）
 
 接上 MIDI 键盘，把**当前弹奏的音高实时画在大谱表上**，同时把 MIDI 原样**直通**给你的音源（Kontakt 7 等）。
 本软件**不发声**——音源由你自己的 Kontakt 7 负责。
@@ -50,10 +50,10 @@ Loopback 通道，并给出发送"麦克风 + Kontakt"给对方的具体步骤�
 
 ```powershell
 # 直接运行（已编译好的）
-src\MidiStaffVisualizer.App\bin\Debug\net10.0\MidiStaffVisualizer.exe
+src\MidiVisualizer.App\bin\Debug\net10.0\MidiVisualizer.exe
 
 # 或从源码运行
-dotnet run --project src\MidiStaffVisualizer.App
+dotnet run --project src\MidiVisualizer.App
 ```
 
 1. **① MIDI 输入** → 选你的键盘（例如 `X6pro`）
@@ -113,9 +113,9 @@ Windows 上物理 MIDI 端口是**独占**的：本软件占用了键盘端口�
 ## 项目结构
 
 ```
-MidiStaffVisualizer.slnx
+MidiVisualizer.slnx
 src/
-  MidiStaffVisualizer.Core/            # 无 UI 依赖
+  MidiVisualizer.Core/            # 无 UI 依赖
     Midi/MidiInputService.cs           # winmm 输入端口枚举与打开
     Midi/MidiOutputService.cs          # winmm 输出端口
     Midi/MidiThruRouter.cs             # 直通：多端口、通道过滤、移调、复位
@@ -124,7 +124,7 @@ src/
     Music/ChordDetector.cs             # 和弦识别（含 sus2(no5) 风格）
     Music/LiveStaff.cs                 # 横向排版模型（分列 / 合并和弦 / note-off 移除）
     Diagnostics/AudioEndpointProbe.cs  # 音频端点枚举（仅提示用）
-  MidiStaffVisualizer.App/             # Avalonia UI
+  MidiVisualizer.App/             # Avalonia UI
     Assets/Bravura.otf                 # 乐谱字体（SIL OFL 1.1）+ LICENSE.txt
     Controls/StaffControl.cs           # 五线谱绘制（含谱号外观参数）
     Controls/PianoKeyboardControl.cs   # 屏幕钢琴
@@ -134,7 +134,7 @@ src/
 docs/staff-preview.png
 ```
 
-乐谱字形使用随程序打包的 **Bravura**（`src/MidiStaffVisualizer.App/Assets/Bravura.otf`），
+乐谱字形使用随程序打包的 **Bravura**（`src/MidiVisualizer.App/Assets/Bravura.otf`），
 这是 SIL Open Font License 1.1 的雕版比例乐谱字体（许可原文见 `Assets/LICENSE.txt`），
 笔画比 Windows 自带的 Segoe UI Symbol 细得多、比例也是标准乐谱比例。
 

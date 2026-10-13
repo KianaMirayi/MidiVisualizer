@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/MidiVisualizer.App/MidiVisualizer.App.csproj" />
+    <Project Path="src/MidiVisualizer.Core/MidiVisualizer.Core.csproj" />
+  </Folder>
+</Solution>
